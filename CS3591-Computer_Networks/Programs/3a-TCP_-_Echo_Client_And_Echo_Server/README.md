@@ -34,4 +34,4 @@ Client: bye
 Echo Server Message: bye
 ```
 
-![Execution](https://i.postimg.cc/xTWNTYzh/Screenshot-2023-08-14-17-27-42.png)
+![Execution](https://i.postimg.cc/NfHTqLzZ/Screenshot-2023-08-14-17-36-44.png)
