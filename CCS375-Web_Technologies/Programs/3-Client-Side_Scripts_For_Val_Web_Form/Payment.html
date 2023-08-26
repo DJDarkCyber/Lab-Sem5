@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Payment</title>
+    <script>
+        function validate() {
+            var flag = 1;
+            if (document.myform.id.value == "" ||
+                document.myform.pwd.value == "" ||
+                document.myform.amount.value == "" ||
+                document.myform.num.value == "") {
+                flag = 0;
+            }
+            var str = document.myform.amount.value;
+            for (var i = 0; i < str.length; i++) {
+                var x = str.substr(i, 1);
+                if (!(x <= 9)) {
+                    flag = 0;
+                    break;
+                }
+            }
+            str = document.myform.num.value;
+            for (var i = 0; i < str.length; i++) {
+                var x = str.substr(i, 1);
+                if (!(x <= 9)) {
+                    flag = 0;
+                    break;
+                }
+            }
+            if (flag == 1) {
+                alert("VALID INPUT");
+            } else {
+                alert("INVALID INPUT");
+                document.myform.focus();
+            }
+        }
+    </script>
+</head>
+<body bgcolor="pink">
+    <br><br><br>
+    <form name="myform">
+        <div align="center">
+            <pre>
+                LOGIN ID :          <input type="text" name="id"><br>
+                PASSWORD :          <input type="password" name="pwd"><br>
+                AMOUNT :            <input type="text" name="amount"><br>
+                CREDIT CARD NUMBER: <input type="password" name="num"><br>
+            </pre><br><br>
+        </div>
+        <br><br>
+        <div align="center">
+            <input type="submit" value="OK" onClick="validate()">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="Clear">
+        </div>
+    </form>
+</body>
+</html>

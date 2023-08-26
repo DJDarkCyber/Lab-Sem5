@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 25% 75%;
+            grid-template-rows: 25% 75%;
+            height: 100vh;
+            margin: 0;
+        }
+        #top {
+            grid-column: 1 / span 2;
+            background-color: lightgray;
+        }
+        #left {
+            background-color: lightblue;
+        }
+        #right {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <a href="Top.html"><div id="top">Top Frame Content</div></a>
+    <a href="Left.html"><div id="left">Left Frame Content</div></a>
+    <a href="Right.html"><div id="right">Right Frame Content</div></a>
+    
+</body>
+</html>
