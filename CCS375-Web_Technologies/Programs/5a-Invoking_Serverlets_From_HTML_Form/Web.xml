@@ -1,0 +1,12 @@
+<servlet>
+<servlet-name>MyServlet</servlet-name>
+<servlet-class>MyServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>MyServlet</servlet-name>
+<url-pattern>/MyServlet</url-pattern>
+</servlet-mapping>
+<session-config><session-timeout>
+30
+</session-timeout>
+</session-config>
