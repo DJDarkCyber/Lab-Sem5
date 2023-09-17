@@ -1,7 +1,7 @@
 # Ex.No.8 - Code Optimization Using Constant Folding.
 
 ```
-$ cc heap_store.c -o heap_store.out
+$ cc opt_const_fold.c -o opt_const_fold.out
 ```
 
 Execution :
