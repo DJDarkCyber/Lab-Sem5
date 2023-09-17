@@ -1,4 +1,4 @@
-# Ex.No.6 - Generate three address code for a simple program using LEX and YACC.
+# Ex.No.7 - Implementation of Heap Storage Allocation Strategy.
 
 ```
 $ cc heap_store.c -o heap_store.out
