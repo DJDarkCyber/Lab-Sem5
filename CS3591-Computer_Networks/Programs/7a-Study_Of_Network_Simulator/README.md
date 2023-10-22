@@ -1,0 +1,41 @@
+# Ex.No.7a - Study Of Network Simulator (NS)
+
+```
+$ ns sim.tcl
+```
+
+Execution :
+
+1. Run `ns sim.tcl` in terminal.
+
+OUTPUT:
+
+`ns sim.tcl`
+```
+V -t * -v 1.0a5 -a 0
+A -t * -n 1 -p 0 -o 0x7fffffff -c 30 -a 1
+A -t * -h 1 -m 1073741823 -s 0
+n -t * -a 8 -s 8 -S UP -v circle -c black -i black
+n -t * -a 4 -s 4 -S UP -v circle -c black -i black
+n -t * -a 0 -s 0 -S UP -v circle -c black -i black
+n -t * -a 5 -s 5 -S UP -v circle -c black -i black
+n -t * -a 1 -s 1 -S UP -v circle -c black -i black
+n -t * -a 6 -s 6 -S UP -v circle -c black -i black
+n -t * -a 2 -s 2 -S UP -v circle -c black -i black
+n -t * -a 7 -s 7 -S UP -v circle -c black -i black
+n -t * -a 3 -s 3 -S UP -v circle -c black -i black
+l -t * -s 0 -d 1 -S UP -r 1000000 -D 0.01 -c black
+l -t * -s 2 -d 3 -S UP -r 1000000 -D 0.01 -c black
+l -t * -s 3 -d 4 -S UP -r 1000000 -D 0.01 -c black
+l -t * -s 4 -d 5 -S UP -r 1000000 -D 0.01 -c black
+l -t * -s 5 -d 6 -S UP -r 1000000 -D 0.01 -c black
+l -t * -s 6 -d 7 -S UP -r 1000000 -D 0.01 -c black
+l -t * -s 7 -d 8 -S UP -r 1000000 -D 0.01 -c black
+l -t * -s 8 -d 2 -S UP -r 1000000 -D 0.01 -c black
+v 0 link-up 1 0
+l -t 0 -s 1 -d 0 -S UP
+v -t 0 link-up 0 1 0
+v 0 link-up 0 1
+l -t 0 -s 0 -d 1 -S UP
+v -t 0 link-up 0 0 1
+```
