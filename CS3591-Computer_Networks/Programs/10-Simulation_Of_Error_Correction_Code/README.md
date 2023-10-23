@@ -39,14 +39,14 @@ The codeword is:
 2. CRC DECODER
 3. EXIT
 Enter your choice: 2
-Enter the length of codeword: 4
-Enter the codeword: 1 0 1 1  
+Enter the length of codeword: 6
+Enter the codeword: 1 0 1 1 1 0
 Enter the length of divisor: 3
-Enter the divisor: 0 1 0
+Enter the divisor: 1 1 0
 
 The quotient is:
-11
+1101
 The remainder is:
-101
-Error occurs in the received code
+000
+No error in the received code
 ```
