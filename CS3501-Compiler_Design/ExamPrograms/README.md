@@ -1,6 +1,6 @@
-# CS3501 - Compiler Design (Exam Programs)
+# CS3501 - Web Technologies (Exam Programs)
 
-Welcome to my CS3591 repository! This is where I've uploaded the practical programs related to Compiler Design from my exams.
+Welcome to my CS3591 repository! This is where I've uploaded the practical programs related to Web Technologies from my exams.
 
 ## Table of Contents
 
@@ -9,7 +9,7 @@ Welcome to my CS3591 repository! This is where I've uploaded the practical progr
 
 ## Introduction
 
-In this repository, you'll find a collection of practical programs that I've completed as part of my CS3501 course on Compiler Design. 
+In this repository, you'll find a collection of practical programs that I've completed as part of my CCS375 course on Web Technologies. 
 ## Usage
 
 To run any of the programs, follow these steps:
