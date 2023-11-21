@@ -1,6 +1,6 @@
 # CS3501 - Compiler Design (Exam Programs)
 
-Welcome to my CS3591 repository! This is where I've uploaded the practical programs related to Computer Networks from my exams.
+Welcome to my CS3591 repository! This is where I've uploaded the practical programs related to Compiler Design from my exams.
 
 ## Table of Contents
 
