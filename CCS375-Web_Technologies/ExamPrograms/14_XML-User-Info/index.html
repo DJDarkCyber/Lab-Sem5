@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+</head>
+<body>
+
+<script>
+// Create and save an XML document at the server (You would typically do this server-side)
+var xmlText = `<?xml version="1.0" ?>
+<users>
+    <user>
+        <userId>1</userId>
+        <name>John Doe</name>
+        <email>john@example.com</email>
+    </user>
+    <user>
+        <userId>2</userId>
+        <name>Jane Doe</name>
+        <email>jane@example.com</email>
+    </user>
+    <user>
+        <userId>3</userId>
+        <name>Bob Smith</name>
+        <email>bob@example.com</email>
+    </user>
+    <user>
+        <userId>4</userId>
+        <name>Alice Johnson</name>
+        <email>alice@example.com</email>
+    </user>
+    <user>
+        <userId>5</userId>
+        <name>Charlie Brown</name>
+        <email>charlie@example.com</email>
+    </user>
+</users>`;
+
+// Convert the XML text into a Document object
+var parser = new DOMParser();
+var xmlDoc = parser.parseFromString(xmlText, "text/xml");
+
+function getUserDetails(userId) {
+    var users = xmlDoc.getElementsByTagName("user");
+    for (var i = 0; i < users.length; i++) {
+        var currentUserId = users[i].getElementsByTagName("userId")[0].textContent;
+        if (currentUserId === userId) {
+            var name = users[i].getElementsByTagName("name")[0].textContent;
+            var email = users[i].getElementsByTagName("email")[0].textContent;
+            return { name: name, email: email };
+        }
+    }
+    return null; // User not found
+}
+
+// Example usage
+var inputUserId = prompt("Enter User ID:");
+var userDetails = getUserDetails(inputUserId);
+
+if (userDetails) {
+    alert("User Details:\nName: " + userDetails.name + "\nEmail: " + userDetails.email);
+} else {
+    alert("User not found");
+}
+</script>
+
+</body>
+</html>

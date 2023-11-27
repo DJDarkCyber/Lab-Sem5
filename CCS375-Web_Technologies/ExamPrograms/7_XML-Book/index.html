@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Details</title>
+    <script>
+        function loadXmlDoc(dname, callback) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    callback(this.responseXML);
+                }
+            };
+            xhttp.open("GET", dname, true);
+            xhttp.send();
+        }
+
+        function getBookDetails() {
+            var titleToSearch = document.getElementById("titleInput").value;
+            loadXmlDoc("books.xml", function(xmldoc) {
+                var books = xmldoc.getElementsByTagName("book");
+                var resultContainer = document.getElementById("resultContainer");
+                var found = false;
+
+                for (var i = 0; i < books.length; i++) {
+                    var title = books[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+
+                    if (title === titleToSearch) {
+                        found = true;
+                        var author = books[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+                        var year = books[i].getElementsByTagName("year")[0].childNodes[0].nodeValue;
+                        var publisher = books[i].getElementsByTagName("publisher")[0].childNodes[0].nodeValue;
+                        var price = books[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+
+                        resultContainer.innerHTML = "<h2>Book Details</h2>" +
+                            "<p><strong>Title:</strong> " + title + "</p>" +
+                            "<p><strong>Author:</strong> " + author + "</p>" +
+                            "<p><strong>Year:</strong> " + year + "</p>" +
+                            "<p><strong>Publisher:</strong> " + publisher + "</p>" +
+                            "<p><strong>Price:</strong> " + price + "</p>";
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    resultContainer.innerHTML = "<p>Book with title '" + titleToSearch + "' not found.</p>";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Book Information</h1>
+    <label for="titleInput">Enter Book Title: </label>
+    <input type="text" id="titleInput">
+    <button onclick="getBookDetails()">Get Details</button>
+
+    <div id="resultContainer"></div>
+</body>
+</html>

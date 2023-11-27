@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Exam Form</title>
+</head>
+<body>
+    <form id="examForm">
+        <strong><p>QUESTIONS:</p></strong>
+        
+        1. Java Uses:
+        <p>
+            <input type="radio" name="ans1" value="5">Interpreter
+            <input type="radio" name="ans1" value="0">Compiler
+            <input type="radio" name="ans1" value="5">Interpreter & Compiler
+        </p>
+        
+        2. Net is an OS:
+        <p>
+            <input type="radio" name="ans2" value="5">Yes
+            <input type="radio" name="ans2" value="0">No
+        </p>
+        
+        3. ASP Uses:
+        <p>
+            <input type="radio" name="ans3" value="0">VBScript
+            <input type="radio" name="ans3" value="0">JavaScript
+            <input type="radio" name="ans3" value="5">VBScript & JavaScript
+        </p>
+
+        <button type="button" onclick="displayResult()">Submit</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+    </form>
+
+    <div id="resultContainer"></div>
+
+    <script>
+        function displayResult() {
+            var ans1 = parseInt(document.querySelector('input[name="ans1"]:checked')?.value) || 0;
+            var ans2 = parseInt(document.querySelector('input[name="ans2"]:checked')?.value) || 0;
+            var ans3 = parseInt(document.querySelector('input[name="ans3"]:checked')?.value) || 0;
+
+            var totalMarks = ans1 + ans2 + ans3;
+
+            var resultContainer = document.getElementById('resultContainer');
+            resultContainer.innerText = 'Total Marks: ' + totalMarks;
+        }
+
+        function resetForm() {
+            document.getElementById('examForm').reset();
+            document.getElementById('resultContainer').innerText = '';
+        }
+    </script>
+</body>
+</html>

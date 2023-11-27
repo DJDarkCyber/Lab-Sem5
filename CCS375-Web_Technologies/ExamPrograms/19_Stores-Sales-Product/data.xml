@@ -1,0 +1,13 @@
+<products>
+  <product id="1">
+    <name>Product 1</name>
+    <price>10.99</price>
+    <quantity>50</quantity>
+  </product>
+  <product id="2">
+    <name>Product 2</name>
+    <price>19.99</price>
+    <quantity>30</quantity>
+  </product>
+  <!-- Add more product entries as needed -->
+</products>

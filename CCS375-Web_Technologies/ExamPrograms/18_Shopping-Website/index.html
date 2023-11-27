@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Review Rating Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        section {
+            margin: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        output {
+            display: block;
+            margin-top: 20px;
+        }
+
+        .positive-reviews,
+        .negative-reviews {
+            margin-top: 20px;
+        }
+
+        .review {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .positive-review {
+            border: 2px solid #2ecc71;
+        }
+
+        .negative-review {
+            border: 2px solid #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shopping Review Rating Website</h1>
+    </header>
+
+    <section>
+        <form id="reviewForm">
+            <label for="review">Write your review:</label>
+            <textarea id="review" rows="4" required></textarea>
+            <button type="button" onclick="submitReview()">Submit Review</button>
+            <output id="result"></output>
+        </form>
+
+        <div class="positive-reviews" id="positiveReviews">
+            <h2>Positive Reviews</h2>
+        </div>
+
+        <div class="negative-reviews" id="negativeReviews">
+            <h2>Negative Reviews</h2>
+        </div>
+    </section>
+
+    <script>
+        function submitReview() {
+            var reviewText = document.getElementById('review').value;
+            var resultOutput = document.getElementById('result');
+            var positiveReviewsContainer = document.getElementById('positiveReviews');
+            var negativeReviewsContainer = document.getElementById('negativeReviews');
+
+            if (reviewText.trim() === '') {
+                resultOutput.innerText = 'Please write a review.';
+                return;
+            }
+
+            // Clear previous messages
+            resultOutput.innerText = '';
+
+            // Create a new review element
+            var reviewElement = document.createElement('div');
+            reviewElement.classList.add('review');
+            reviewElement.innerText = reviewText;
+
+            // Determine if the review is positive or negative
+            var isPositive = analyzeReview(reviewText);
+
+            // Append the review to the appropriate container
+            if (isPositive) {
+                reviewElement.classList.add('positive-review');
+                positiveReviewsContainer.appendChild(reviewElement);
+            } else {
+                reviewElement.classList.add('negative-review');
+                negativeReviewsContainer.appendChild(reviewElement);
+            }
+
+            // Reset the form
+            document.getElementById('reviewForm').reset();
+        }
+
+        function analyzeReview(review) {
+            // Simulate a basic sentiment analysis
+            // In a real-world scenario, you would use a more advanced analysis
+            var positiveWords = ['good', 'excellent', 'awesome', 'amazing'];
+            var negativeWords = ['bad', 'poor', 'disappointing', 'horrible'];
+
+            for (var i = 0; i < positiveWords.length; i++) {
+                if (review.toLowerCase().includes(positiveWords[i])) {
+                    return true;
+                }
+            }
+
+            for (var j = 0; j < negativeWords.length; j++) {
+                if (review.toLowerCase().includes(negativeWords[j])) {
+                    return false;
+                }
+            }
+
+            // If no clear sentiment is detected, consider it positive
+            return true;
+        }
+    </script>
+</body>
+</html>
